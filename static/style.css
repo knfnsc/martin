@@ -1,0 +1,174 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:root {
+  --off-black: #101010;
+  --color-silver: #a5a5a5;
+  --color-davy-gray: #595959;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+
+  font-family: "Courier Prime", monospace;
+}
+
+main {
+  color: white;
+  background-color: var(--off-black);
+
+  padding: 5%;
+}
+
+/*Configuração do NavBar*/
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  background-color: whitesmoke;
+  border-bottom: 0.5px solid black;
+  opacity: 0.95;
+  transition: all .75s ease-in-out;
+}
+
+nav:hover {
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+
+nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 15px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav {
+  visibility: hidden !important;
+}
+
+.nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 30px !important;
+}
+
+.nav > ul > li {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav > ul > li::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  transition: 0.2s;
+}
+
+.nav > ul > li:hover::after {
+  content: "";
+  background-color: black;
+  width: 100%;
+}
+
+#perfil > button {
+  padding: 6.5px 10px;
+  min-width: 5em;
+  border: 1px solid black;
+  border-radius: 0px;
+  cursor: pointer;
+
+  transition: background-color .5s ease-in-out,
+              color .5s ease-in-out,
+              box-shadow .5s ease-in-out
+  ;
+}
+
+#btn-signin:hover {
+  background-color: var(--off-black);
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.450);
+  color: white; 
+}
+
+#btn-signup:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.571);
+  background-color: var(--color-davy-gray);
+}
+
+#perfil > button:not(:hover) {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#btn-signin {
+  background-color: whitesmoke;
+}
+
+#btn-signup {
+  background-color: var(--color-silver);
+  color: white;
+}
+
+.nav_ativado {
+  visibility: visible !important;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+/*Fim da configuração do NavBar*/
+
+p {
+  font-size: 1.5em;
+  text-align: justify;
+
+  padding: 0.5% 10%;
+}
+
+#face-page {
+  background-color: whitesmoke;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-title {
+  font-size: 3em;
+  text-wrap: balance;
+
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+
+#martin-text {
+  font-style: italic;
+
+  color: grey;
+
+  animation-name: fade-in;
+  animation-duration: 3.25s;
+}
